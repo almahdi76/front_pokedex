@@ -1,0 +1,20 @@
+.pokemonDetail.MuiCard-root {
+  border-radius: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1em;
+}
+
+.pokemonDetail .info {
+  width: 15em;
+  margin: 0.5em;
+}
+
+.pokemonDetail .label {
+  width: 4em;
+  text-align: right;
+  padding-right: 1em;
+  font-weight: 500;
+}

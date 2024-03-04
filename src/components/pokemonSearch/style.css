@@ -1,0 +1,11 @@
+.search {
+  margin: 0.5em !important;
+}
+
+.search fieldset {
+  border-radius: 2rem;
+}
+
+#orderBy label {
+  display: none;
+}

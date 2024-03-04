@@ -1,0 +1,9 @@
+.pokemonList h2 {
+  font-size: 2em;
+  margin: 1em;
+  text-align: left;
+}
+
+.pokemonList {
+  margin-top: 6em;
+}

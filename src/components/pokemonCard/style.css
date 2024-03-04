@@ -1,0 +1,23 @@
+.pokemonCard h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.pokemonCard .MuiCardHeader-title {
+  text-align: left;
+}
+
+.pokemonCard.MuiCard-root {
+  border-radius: 1em;
+}
+
+.pokemonCard {
+  height: 20em;
+  width: 17em;
+}
+
+.pokemonCard .MuiCardMedia-img {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}

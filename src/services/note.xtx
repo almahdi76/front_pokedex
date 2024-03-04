@@ -1,0 +1,44 @@
+======= Pokedex.tsx
+  const { t } = useTranslation();
+  const params = useParams();
+  const [pokemonOrigin, setPokemonOrigin] = useState<Pokemon[]>([]);
+  const [pokemonL, setPokemonL] = useState<Pokemon[]>([]);
+
+  const [searchText, setSearchText] = useState<string | undefined>(
+    params.filter
+  );
+  const [sortBy, setSortBy] = useState<string>("id");
+  const [sortDirection, setSortDirection] = useState<number>(1);
+  const handlePokemonChange = (pok: Pokemon) => {
+    let result: Pokemon[];
+    result = pokemonOrigin.filter((p: Pokemon) => p.id !== pok.id);
+    result.push(pok);
+    setPokemonOrigin(result);
+  };
+useEffect(() => {
+    if (searchText !== undefined && searchText !== "") {
+      PokemonService.getStartWith(searchText.toLowerCase()).then((value) =>
+        setPokemonOrigin(value)
+      );
+    } else {
+      PokemonService.getAll().then((value) => setPokemonOrigin(value));
+    }
+  }, [searchText]);
+  useEffect(() => {
+    let tempSorted: Pokemon[] = pokemonOrigin.sort((a: Pokemon, b: Pokemon) => {
+      let valA: number | string = a.id;
+      let valB: number | string = b.id;
+
+      if (sortBy === "name") {
+        valA = t("pokemon." + a.id);
+        valB = t("pokemon." + b.id);
+      } else if (sortBy === "CP") {
+        valA = a.cp;
+        valB = b.cp;
+      }
+      return valA > valB ? sortDirection : -sortDirection;
+    });
+    setPokemonL(tempSorted);
+  }, [sortBy, sortDirection, pokemonOrigin, t]);
+
+  return (---)

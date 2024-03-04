@@ -1,0 +1,19 @@
+BK xxxDTO        <---->       FR  models yyy
+    stringint                     string|number
+                                    fetch **
+                                        url`/?name=${varialbe}`
+                                        ,JSON
+                                        meyhod:GET|PODT`|DELETE
+                                        body:json.stringify(obj),
+                                        headers:{jwt:authenticationService.getJwt() ! en localSg|service 
+                                                contentType: "application/json"}
+
+async save(obj):Promise<yyy>{
+    return fetch(**)
+        .then(reponse=>reponse.json())
+        .catch(reson.)
+        .finaly()
+}
+
+
+pokemon.type?.map() pour bien
